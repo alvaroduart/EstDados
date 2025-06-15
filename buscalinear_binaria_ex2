@@ -1,0 +1,37 @@
+def BuscaLinear(arr):
+    for i in range(len(arr)):
+        if arr[i] <= i:
+            return i
+        
+
+def BuscaBinaria(arr):
+    
+    left, right = 0, len(arr) - 1
+    
+    while left <= right:
+       
+        mid = left + (right - left) // 2          
+        if arr[mid] >= mid:
+            left = mid + 1                                    
+        else: 
+            right = mid -1
+
+    return left
+
+
+feliz = [30, 16, 14, 9, 6, 6, 5]
+edu = [39, 24, 20, 13, 12, 9, 7, 6, 6, 5]
+testebin = [6, 5, 3, 1, 0]
+arr = [10, 8, 5, 4, 3]
+a = [5, 3, 3, 1, 0]
+
+print(BuscaLinear(feliz))
+print(BuscaLinear(edu))
+print(BuscaLinear(testebin))
+print(BuscaBinaria(feliz))
+print(BuscaBinaria(edu))
+print(BuscaBinaria(testebin))
+print(BuscaLinear(arr))
+print(BuscaBinaria(arr))
+print(BuscaLinear(a))
+print(BuscaBinaria(a))
